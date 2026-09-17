@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <style>
 :root{
-  --cream:#F7F6F0; --cream-2:#EFEEE6; --ink:#0F1F17; --ink-2:#3E4B44; --ink-3:#7A857E; --line:#DEE0D6;
-  --green:#1C4B2B; --green-deep:#12331D; --green-2:#2E6B41; --green-soft:#DCE8DD; --lime:#CFE7B8;
+  --cream:#FFFEF9; --cream-2:#F3F1EA; --ink:#0F1F17; --ink-2:#3E4B44; --ink-3:#7A857E; --line:#DEE0D6;
+  --green:#2C4C35; --green-deep:#1E3625; --green-2:#2E6B41; --green-soft:#DCE8DD; --lime:#CFE7B8;
   --gold:#C5A04A; --gold-soft:#F3EBD6;
   --r:22px; --gutter:clamp(16px,4vw,56px); --maxw:1360px;
   --display:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -96,6 +96,10 @@ section{position:relative}
 /* ---- 3 highlight → Life Scan (Seed: bundle highlight, light) ---- */
 .hl{background:var(--cream);padding-block:72px 40px}
 .hl .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(24px,5vw,72px);align-items:center}
+.hl .iam{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;color:var(--ink)}
+.hl .iam b{font-family:var(--display);font-size:26px;font-weight:700;letter-spacing:-.03em}
+.hl .iam span{font-size:14px;font-weight:600;color:var(--ink-2)}
+.hl .iam small{font-size:12.5px;color:var(--ink-3)}
 .hl h2{font-size:clamp(32px,4.2vw,54px);line-height:1.04;margin-top:14px}
 .hl p.lead{font-size:17px;color:var(--ink-2);max-width:46ch;margin-top:16px}
 .hl ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:8px;font-size:15px;color:var(--ink-2)}
@@ -260,12 +264,12 @@ footer .word{font-family:var(--display);font-weight:700;letter-spacing:-.04em;fo
   <span class="tag">1 · HERO — Seed: “A life-changing health routine…”</span>
   <div class="wrap">
     <div>
-      <div class="note"><b>Regras de copy (John, 17/09): (1) falar do que a pessoa precisa, não do que a Natura tem; (2) "Essen" não diz nada ao leitor — usar "Alemanha" como selo de origem ("da Alemanha para a Europa"); Essen só no endereço legal do rodapé. Nada de "temos cinco protocolos" — a pessoa só precisa saber que o Scan mostra a lacuna dela e entrega a solução.</b><br><b>Seed: promessa ao leitor + 4 produtos enfileirados em superfície escura + Quiz (primário) e Shop (link).</b>Natura: mesma composição. A promessa é a tese da empresa (absorção), sustentada pela NVCC® — que a própria Natura define como "know-how desenvolvido ao longo de décadas para aumentar a biodisponibilidade natural dos nutrientes". Os 4 produtos do lineup são os 4 com tecnologia NVCC/MM documentada.
+      <div class="note"><b>Papel da página (John, 17/09): o I AM vende, a comunidade movimenta; o site da Natura credibiliza. Brandbook I AM p.10–12: a NV é "fabricante alemão de ciência, tecnologia e fabricação" e responde "como"; este site é regime 1 (só a NV assina; I AM não entra, nem como cor) — exceto o bloco do Life Scan (regime 3). Verde e branco quente herdados do brandbook (#2C4C35 / #FFFEF9); tipografia é a da NV, não Qubic (p.25: as marcas se separam pela tipografia). Regras de copy: falar do que a pessoa precisa; "Alemanha", não "Essen"; vocabulário do brandbook p.47–48 (nada de jornada, potencial, transformação, oportunidade, rede, cura, trata). Nada de "temos cinco protocolos" — a pessoa só precisa saber que o Scan mostra a lacuna dela e entrega a solução.</b><br><b>Seed: promessa ao leitor + 4 produtos enfileirados em superfície escura + Quiz (primário) e Shop (link).</b>Natura: mesma composição. A promessa é a tese da empresa (absorção), sustentada pela NVCC® — que a própria Natura define como "know-how desenvolvido ao longo de décadas para aumentar a biodisponibilidade natural dos nutrientes". Os 4 produtos do lineup são os 4 com tecnologia NVCC/MM documentada.
         <ul><li>CTA primário: “Fazer o Life Scan” → questionário (como a Seed faz com o Quiz). Secundário: “Ver produtos →” → /shop.</li><li>Mobile: texto, botões, depois o lineup em faixa horizontal.</li><li>Falta: lineup fotografado em conjunto (hoje são packshots recortados, escala aproximada).</li></ul></div>
-      <p class="eyebrow" style="color:#CFE0D3;margin-bottom:18px">Natura Vitalis · desenvolvido na Alemanha · desde 1999</p>
+      <p class="eyebrow" style="color:#CFE0D3;margin-bottom:18px">Natura Vitalis · fabricante alemão · desde 1999</p>
       <h1>Não é o que você toma. É o que o seu corpo absorve.</h1>
-      <p class="lead">Muito do que você toma passa pelo corpo sem ser aproveitado. Desde 1999, a Natura Vitalis desenvolve na Alemanha formas de mudar isso — para a vitamina D, a vitamina C, o Q10, o hialurônico. A tecnologia se chama <strong style="color:#fff">NVCC®</strong>. Nesta página você vê o que ela muda para você.</p>
-      <div class="ctas"><a class="btn btn-lime" href="#lifescan">Descobrir o que eu preciso</a><a class="btn btn-link" href="#produtos">Ver produtos →</a></div>
+      <p class="lead">Muito do que você toma passa pelo corpo sem ser aproveitado. Desde 1999, a Natura Vitalis pesquisa, formula e fabrica na Alemanha para mudar isso — na vitamina D, na vitamina C, no Q10, no hialurônico. A tecnologia se chama <strong style="color:#fff">NVCC®</strong>. Nesta página você vê como ela funciona.</p>
+      <div class="ctas"><a class="btn btn-lime" href="#lifescan">Fazer o Life Scan</a><a class="btn btn-link" href="#produtos">Ver produtos →</a></div>
     </div>
     <div class="lineup">
       <img class="p1" src="img/nanoboost.png" alt="NanoBoost D3 & K2">
@@ -287,7 +291,7 @@ footer .word{font-family:var(--display);font-weight:700;letter-spacing:-.04em;fo
     <div class="head">
       <div><h2>Para cada coisa que falta, uma forma de chegar.</h2>
         <div class="catrow"><a href="#">Suplementos alimentares</a><a href="#">Cosméticos</a><a href="#">Delphin T8</a><a href="#">Bundles</a></div></div>
-      <p>Vitamina D em névoa porque não se dissolve em água. Vitamina C revestida porque se perde na digestão. Hialurônico micro porque a molécula normal não entra. Escolha pelo que você precisa — ou deixe o Life Scan escolher por você.</p>
+      <p>Vitamina D em névoa porque não se dissolve em água. Vitamina C revestida porque se perde na digestão. Hialurônico micro porque a molécula normal não entra. Escolha pelo que você precisa — ou deixe o Life Scan apontar.</p>
       <a class="all" href="#">Ver todos os produtos</a>
     </div>
     <div class="cards">
@@ -307,13 +311,13 @@ footer .word{font-family:var(--display);font-weight:700;letter-spacing:-.04em;fo
   <span class="tag">3 · LIFE SCAN — Seed: “Bundle + Save” highlight</span>
   <div class="wrap">
     <div>
-      <div class="note"><b>Seed: bloco claro com chip de oferta, título, frase, CTA e, à direita, o bundle + 3 miniaturas. AG1: "what's included" itemizado. Puríssima: botão abre a tarefa direto.</b>Natura: este é o slot do Life Scan — a Seed vende o bundle aqui; a Natura oferece o protocolo por meio do Scan. A lista "o que vem no protocolo" é o dispositivo do AG1. Única seção de Scan da página.
+      <div class="note"><b>Brandbook I AM (p.12, 13, 46, 53): este bloco é o único da Home em regime 3 — I AM em destaque, Natura Vitalis em endosso. Título é o exemplo oficial de copy do brandbook. Entrada em branco quente, uma chamada, um botão; nenhuma cor de pilar antes do diagnóstico; resultado parcial grátis, completo por cupom/compra; oferta depois do resultado.</b>Seed: slot do bundle. AG1: "o que vem" itemizado. Puríssima: botão abre a tarefa. Falta: lockup oficial do I AM (está no PDF, p.32) no lugar do texto; pergunta real da tela 1 — usei a pergunta-guia do pilar Body do brandbook (p.17).
         <ul><li>CTA: “Iniciar Life Scan” → primeira pergunta, sem login, sem página intermediária; preserva idioma e indicação.</li><li>Miniaturas: pergunta real · tela de resultado · protocolo no app (as três são placeholders até vir a interface).</li><li>Falta: tela real do questionário; foto do bundle de um protocolo.</li></ul></div>
-      <span class="badge">Life Scan · grátis · sem cadastro</span>
-      <h2>Você não precisa saber o que tomar. Só precisa responder.</h2>
-      <p class="lead">O Life Scan lê a sua rotina, o seu corpo e os seus objetivos, mostra onde está a lacuna e monta um protocolo de 90 dias para fechá-la — com os produtos certos, na ordem certa. Nenhuma conta, nenhum e-mail antes da primeira pergunta.</p>
-      <ul><li>Resultado na hora</li><li>Um protocolo feito para o seu caso, não um catálogo</li><li>Leve o protocolo inteiro ou só o que quiser</li></ul>
-      <div class="ctas"><a class="btn btn-green" href="#">Começar o meu Life Scan</a><small>Abre a primeira pergunta.</small></div>
+      <div class="iam"><b>I AM</b><span>Become your best version</span><small>· um movimento da Natura Vitalis</small></div>
+      <h2>Descubra onde a sua vida está perdendo mais.</h2>
+      <p class="lead">O Life Scan lê os quatro territórios da sua vida e aponta, com clareza, onde está a maior perda. Depois, um protocolo de 90 dias para fechar essa distância — com as fórmulas da Natura Vitalis e um hábito de cada vez. Leva poucos minutos. É grátis.</p>
+      <ul><li>Aponta, nunca acusa</li><li>Resultado na hora, sem cadastro</li><li>A oferta vem depois do resultado — nunca junto</li></ul>
+      <div class="ctas"><a class="btn btn-green" href="#">Fazer o Life Scan</a><small>Abre a primeira pergunta.</small></div>
     </div>
     <div class="media">
       <div class="big"><span class="lbl">Exemplo de protocolo montado</span><img class="i1" src="img/multi.png" alt="Premium Multi Formula"><img class="i2" src="img/nanoboost.png" alt="NanoBoost D3 & K2"><img class="i3" src="img/betterc.png" alt="Better C"></div>
@@ -321,8 +325,8 @@ footer .word{font-family:var(--display);font-weight:700;letter-spacing:-.04em;fo
         <div><span>Premium Multi Formula</span><small>base diária · 60 un.</small></div>
         <div><span>NanoBoost D3 &amp; K2</span><small>1 jato por dia · 20 ml</small></div>
         <div><span>Better C</span><small>1.000 mg · 60 un.</small></div></div>
-      <div class="thumb"><div><div style="font-size:10px;letter-spacing:.08em;color:#9DBFA8">PERGUNTA 1</div><div class="q" style="margin-top:6px">Como está a sua energia ao longo do dia?</div></div><div class="o"><span>Estável</span><span class="s">Cai à tarde</span><span>Baixa desde cedo</span></div></div>
-      <div class="thumb t2"><div style="font-size:10px;letter-spacing:.08em;color:var(--ink-3)">RESULTADO</div><div class="ring"></div><div class="q" style="text-align:center">Onde está a sua lacuna — e o que fecha</div></div>
+      <div class="thumb"><div><div style="font-size:10px;letter-spacing:.08em;color:#9DBFA8">PERGUNTA 1</div><div class="q" style="margin-top:6px">O seu corpo aguenta o seu dia?</div></div><div class="o"><span>Estável</span><span class="s">Cai à tarde</span><span>Baixa desde cedo</span></div></div>
+      <div class="thumb t2"><div style="font-size:10px;letter-spacing:.08em;color:var(--ink-3)">RESULTADO</div><div class="ring"></div><div class="q" style="text-align:center">Onde você está perdendo mais</div></div>
       <div class="thumb t3"><div class="q">Tela do app com o protocolo</div><div style="font-size:11px">placeholder — usar interface real</div></div>
     </div>
   </div>
@@ -369,7 +373,7 @@ footer .word{font-family:var(--display);font-weight:700;letter-spacing:-.04em;fo
         </div>
         <div class="ctas"><a class="btn btn-ink" href="#">Entender como isso chega em você ▸</a></div>
         <div class="crumb"><span>Tecnologia</span> / Micelas e NVCC®</div>
-        <div class="quality"><div><b>Alemanha</b>desenvolvido lá desde 1999</div><div><b>4 prêmios GHP</b>2016 · 17 · 18 · 22</div><div><b>30 dias</b>devolução sem perguntas</div><div><b>0800</b>hotline com gente, seg–sex</div></div>
+        <div class="quality"><div><b>Alemanha</b>pesquisa, formula e fabrica</div><div><b>4 prêmios GHP</b>2016 · 17 · 18 · 22</div><div><b>30 dias</b>devolução sem perguntas</div><div><b>0800</b>hotline com gente, seg–sex</div></div>
       </div>
       <div class="render" aria-label="Ilustração esquemática de uma micela">
         <svg viewBox="0 0 400 400" role="img">
@@ -430,7 +434,7 @@ footer .word{font-family:var(--display);font-weight:700;letter-spacing:-.04em;fo
   <span class="tag">8 · FECHO — Seed: Seed Labs + “Change your gut health for good”</span>
   <div class="wrap">
     <div class="bk a"><span class="side">● Alemanha · desde 1999</span><span class="ph">foto do Frank (a mesma da home atual) a fornecer</span>
-      <div class="in"><h2>“O mais importante não está nestas páginas. Está na frente delas: você.”</h2><p>Frank Felte, fundador. Da Alemanha para a Europa desde 1999 — desenvolvendo, não revendendo.</p><a class="btn btn-white" href="#">Sobre a Natura Vitalis</a></div></div>
+      <div class="in"><h2>“O mais importante não está nestas páginas. Está na frente delas: você.”</h2><p>Frank Felte, fundador. Natura Vitalis: fabricante alemão de ciência e tecnologia desde 1999. Pesquisa, formula e produz — não revende.</p><a class="btn btn-white" href="#">Sobre a Natura Vitalis</a></div></div>
     <div class="bk b"><img src="img/nanoboost.png" alt="">
       <div class="in"><h2>Comece pequeno.</h2><p>Um produto, enviado da Alemanha em 1–3 dias úteis. 30 dias para devolver se não for para você, sem perguntas.</p><a class="btn btn-lime" href="#produtos">Escolher um produto</a></div></div>
   </div>
@@ -442,7 +446,7 @@ footer .word{font-family:var(--display);font-weight:700;letter-spacing:-.04em;fo
   <span class="tag" style="position:absolute">9 · RODAPÉ — Seed: missão + newsletter + wordmark gigante</span>
   <div class="wrap">
     <div class="top">
-      <div><p class="mission">Da Alemanha, desde 1999, com uma obsessão: <em>que o que você toma chegue</em> onde precisa.</p>
+      <div><p class="mission">Fabricante alemão desde 1999, com uma obsessão: <em>que o que você toma chegue</em> onde precisa.</p>
         <div class="nl"><p>Saiba o que está tomando. Uma vez por mês, na sua caixa de entrada.</p><small>Sem promoção diária. Ao inscrever-se você aceita receber e-mails da Natura Vitalis.</small>
           <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Inscrito ✓'"><input id="nl-email" type="email" placeholder="seu@email.com" aria-label="E-mail"><button class="btn btn-lime" type="submit">Inscrever</button></form></div></div>
       <div class="cols">
