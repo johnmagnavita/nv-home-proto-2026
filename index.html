@@ -1,0 +1,498 @@
+<!doctype html><html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Natura Vitalis Home</title></head><body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  --cream:#F7F6F0; --cream-2:#EFEEE6; --ink:#0F1F17; --ink-2:#3E4B44; --ink-3:#7A857E; --line:#DEE0D6;
+  --green:#1C4B2B; --green-deep:#12331D; --green-2:#2E6B41; --green-soft:#DCE8DD; --lime:#CFE7B8;
+  --gold:#C5A04A; --gold-soft:#F3EBD6;
+  --r:22px; --gutter:clamp(16px,4vw,56px); --maxw:1360px;
+  --display:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.025em;text-wrap:balance;margin:0;font-weight:500}
+p{margin:0}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;display:inline-flex;gap:8px;align-items:center}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid transparent;transition:transform .15s,background .15s;justify-content:center;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn-lime{background:var(--lime);color:var(--green-deep)}
+.btn-green{background:var(--green);color:#fff}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-white{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-link{padding:0;background:none;color:inherit;text-decoration:underline;text-underline-offset:5px;border:0}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.badge{font-size:11.5px;font-weight:600;letter-spacing:.02em;padding:5px 10px;border-radius:999px;background:var(--lime);color:var(--green-deep);width:fit-content}
+.badge.gold{background:var(--gold-soft);color:#6a4f0e}
+.badge.line{background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff}
+.tag{position:absolute;left:0;top:0;font-family:var(--display);font-size:11px;letter-spacing:.12em;font-weight:700;background:var(--gold);color:#1a1400;padding:6px 10px;border-radius:0 0 8px 0;display:none;z-index:5}
+body.notes .tag{display:block}
+.note{display:none;margin:0 auto 24px;max-width:var(--maxw);padding:14px 18px;background:#FFF8E6;border:1.5px solid var(--gold);border-radius:12px;font-size:13.5px;color:#4a3d13;line-height:1.5}
+.note b{font-family:var(--display);display:block;margin-bottom:3px;color:#1a1400}
+.note ul{margin:6px 0 0;padding-left:18px;display:grid;gap:2px}
+body.notes .note{display:block}
+.notes-btn{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:12px 18px;font:600 14px var(--body);box-shadow:0 12px 30px rgba(0,0,0,.25);cursor:pointer;display:flex;gap:8px;align-items:center}
+.notes-btn i{width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block}
+body.notes .notes-btn{background:var(--gold);color:#1a1400}
+section{position:relative}
+
+/* ---- nav pill (Seed) ---- */
+.navwrap{position:sticky;top:calc(10px + env(safe-area-inset-top,0px));z-index:50;pointer-events:none;height:0}
+.nav{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pill{pointer-events:auto;display:flex;align-items:center;gap:22px;background:rgba(247,246,240,.78);backdrop-filter:blur(14px) saturate(1.3);border:1px solid rgba(15,31,23,.08);border-radius:999px;padding:10px 18px 10px 14px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.pill img{height:26px;width:auto}
+.pill a{text-decoration:none;font-weight:500;font-size:14.5px;color:var(--ink-2)}
+.pill a:hover{color:var(--ink)}
+.pill.right{gap:8px;padding:6px 6px 6px 16px}
+.pill.right .btn{padding:10px 16px;font-size:14px}
+@media(max-width:760px){.pill a.m{display:none}.pill.right a.m{display:none}}
+
+/* ---- 1 hero (Seed: dark, lineup, quiz + shop) ---- */
+.hero{background:var(--green);color:#fff;padding-top:96px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(20px,4vw,48px);align-items:end;min-height:620px}
+.hero h1{font-size:clamp(38px,5.4vw,72px);line-height:1.02;font-weight:500;letter-spacing:-.03em}
+.hero .lead{font-size:clamp(16px,1.3vw,19px);color:#CFE0D3;max-width:46ch;margin-top:20px}
+.hero .ctas{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:30px;padding-bottom:64px}
+.hero .ctas .btn-link{color:#fff}
+.lineup{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:2%;padding:0 2% 0}
+.lineup::after{content:"";position:absolute;left:5%;right:5%;bottom:0;height:2px;background:rgba(255,255,255,.12)}
+.lineup img{position:relative;filter:drop-shadow(0 30px 30px rgba(0,0,0,.35))}
+.lineup .p1{width:26%}.lineup .p2{width:36%}.lineup .p3{width:40%}.lineup .p4{width:34%;margin-right:-22%}
+.lineup .cap{position:absolute;top:8%;left:4%;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#CFE0D3;display:grid;gap:4px}
+.lineup .cap b{font-family:var(--display);font-size:15px;color:#fff;letter-spacing:0;text-transform:none;font-weight:500}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr;min-height:0}.hero .ctas{padding-bottom:28px}.lineup{margin-inline:calc(-1*var(--gutter));padding-inline:var(--gutter)}}
+
+/* ---- 2 product carousel (Seed: still dark) ---- */
+.prods{background:var(--green);color:#fff;padding-block:64px 88px}
+.prods .head{display:grid;grid-template-columns:1.2fr 1fr auto;gap:28px;align-items:end;margin-bottom:34px}
+.prods h2{font-size:clamp(30px,3.6vw,50px);line-height:1.04}
+.prods .head p{color:#CFE0D3;font-size:15.5px;max-width:44ch}
+.prods .head .all{color:#fff;font-weight:600;text-decoration:none;font-size:14.5px;white-space:nowrap}
+.prods .head .all::after{content:" →"}
+.catrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.catrow a{text-decoration:none;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.3);color:#fff}
+.catrow a:hover{background:rgba(255,255,255,.1)}
+.cards{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-inline:calc(-1*var(--gutter));padding-inline:var(--gutter);scrollbar-width:thin}
+.cards .card{flex:0 0 clamp(250px,23vw,300px);scroll-snap-align:start}
+.card{background:var(--green-deep);border-radius:var(--r);padding:20px 20px 22px;display:grid;grid-template-rows:auto auto auto 1fr auto auto auto;gap:8px;text-decoration:none;min-height:540px;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.card .code{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#9DBFA8;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:4px 10px;width:fit-content;margin-top:6px}
+.card h3{font-size:clamp(20px,1.6vw,24px);line-height:1.1;color:#fff}
+.card .pic{display:grid;place-items:center;padding:12px 6px}
+.card .pic img{max-height:230px;width:auto;max-width:100%;filter:drop-shadow(0 18px 20px rgba(0,0,0,.35))}
+.card .pic .ph{border:1.5px dashed rgba(255,255,255,.35);border-radius:14px;height:210px;width:100%;display:grid;place-items:center;text-align:center;color:#9DBFA8;font-size:13px;padding:16px}
+.card .pic .ph b{display:block;color:#fff;font-family:var(--display);font-weight:500;font-size:15px}
+.card .btn{justify-self:start;padding:11px 16px;font-size:14px}
+.card .price{font-size:13px;color:#9DBFA8}
+@media(max-width:1000px){.prods .head{grid-template-columns:1fr}}
+@media(max-width:600px){.cards .card{flex-basis:78%;min-height:0}}
+
+/* ---- 3 highlight → Life Scan (Seed: bundle highlight, light) ---- */
+.hl{background:var(--cream);padding-block:72px 40px}
+.hl .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(24px,5vw,72px);align-items:center}
+.hl h2{font-size:clamp(32px,4.2vw,54px);line-height:1.04;margin-top:14px}
+.hl p.lead{font-size:17px;color:var(--ink-2);max-width:46ch;margin-top:16px}
+.hl ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:8px;font-size:15px;color:var(--ink-2)}
+.hl li{display:flex;gap:10px;align-items:center}.hl li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green)}
+.hl .ctas{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.hl .ctas small{color:var(--ink-3);font-size:13px}
+.hl .media{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.hl .incl{grid-column:1/-1;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:10px 18px;align-items:center;font-size:13.5px}
+.hl .incl b{font-family:var(--display);font-weight:600;font-size:13px;color:var(--ink3);letter-spacing:.06em;text-transform:uppercase}
+.hl .incl div{display:grid;gap:2px}.hl .incl span{font-weight:600}.hl .incl small{color:var(--ink3);font-size:12px}
+@media(max-width:700px){.hl .incl{grid-template-columns:1fr}}
+.hl .big{grid-column:1/-1;background:linear-gradient(160deg,#DCE8DD,#C8D9CB);border-radius:var(--r);aspect-ratio:16/10;position:relative;overflow:hidden;display:grid;place-items:center}
+.hl .big img{position:absolute;bottom:-4%;filter:drop-shadow(0 20px 24px rgba(15,31,23,.25))}
+.hl .big .i1{left:8%;width:30%}.hl .big .i2{left:38%;width:22%;bottom:2%}.hl .big .i3{right:6%;width:36%}
+.hl .big .lbl{position:absolute;top:16px;left:16px;background:#fff;border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:600;color:var(--green)}
+.hl .thumb{border-radius:16px;aspect-ratio:1;background:var(--green-deep);color:#fff;padding:14px;display:grid;align-content:space-between;font-size:12px;position:relative;overflow:hidden}
+.hl .thumb .q{font-family:var(--display);font-size:14px;line-height:1.2;font-weight:500}
+.hl .thumb .o{display:grid;gap:4px}.hl .thumb .o span{border:1px solid rgba(255,255,255,.25);border-radius:7px;padding:5px 7px;font-size:10.5px}
+.hl .thumb .o span.s{background:var(--gold);color:#1a1400;border-color:var(--gold)}
+.hl .thumb.t2{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.hl .thumb.t2 .ring{width:64px;height:64px;border-radius:50%;border:6px solid var(--green-soft);border-top-color:var(--green);margin:0 auto}
+.hl .thumb.t3{background:var(--gold-soft);color:#3a2b06;border:1.5px dashed #D9C48C}
+@media(max-width:900px){.hl .wrap{grid-template-columns:1fr}}
+
+/* ---- 4 technology (Seed: ViaCap full-bleed video + card + callouts) ---- */
+.tech{padding:40px var(--gutter) 40px}
+.tech .stage{max-width:var(--maxw);margin:0 auto;position:relative;border-radius:28px;overflow:hidden;min-height:680px;background:radial-gradient(60% 50% at 70% 60%,#5E8A5A 0%,#2F5A38 45%,#173A22 100%);color:#fff;display:grid;grid-template-columns:1.05fr .95fr;gap:24px;padding:clamp(24px,4vw,56px)}
+.tech canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.tech .blur{position:absolute;inset:0;background:radial-gradient(40% 40% at 25% 30%,rgba(207,231,184,.25),transparent 70%),radial-gradient(30% 30% at 80% 80%,rgba(207,231,184,.18),transparent 70%)}
+.tech .txt{position:relative;z-index:2;display:grid;align-content:start;gap:18px}
+.tech .eyebrow{color:#CFE0D3}
+.tech h2{font-size:clamp(32px,4vw,56px);line-height:1.02}
+.tech .tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tech .tabs button{font:600 13.5px var(--body);padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;cursor:pointer}
+.tech .tabs button.on{background:#fff;color:var(--green-deep);border-color:#fff}
+.tech .noimg{border:1.5px dashed rgba(255,255,255,.4);border-radius:18px;width:min(100%,300px);aspect-ratio:3/4;display:grid;place-items:center;text-align:center;color:#CFE0D3;font-size:13px;padding:20px}.tech .noimg b{display:block;color:#fff;font-family:var(--display);font-weight:500;font-size:18px;margin-bottom:6px}
+.tech .stat{background:rgba(15,31,23,.45);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px;max-width:440px}
+.tech .stat .l{display:flex;gap:10px;align-items:center;font-size:15px}
+.tech .stat .l .badge{background:rgba(255,255,255,.14);color:#fff}
+.tech .stat b{font-family:var(--display);font-size:38px;font-weight:500;letter-spacing:-.02em;white-space:nowrap}
+.tech .fn{font-size:12.5px;color:#CFE0D3;max-width:52ch}
+.tech .prod{position:relative;z-index:2;display:grid;place-items:center start;padding-right:230px}
+.tech .prod img{width:min(100%,330px);filter:drop-shadow(0 40px 40px rgba(0,0,0,.45))}
+.callout{position:absolute;z-index:3;width:220px;font-size:12.5px;color:#E7EFE8;line-height:1.35}
+.callout b{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:5px}
+.callout::before{content:"";position:absolute;width:44px;height:1px;background:rgba(255,255,255,.55)}
+.callout.c1{right:clamp(24px,4vw,56px);top:18%}.callout.c1::before{left:-52px;top:10px}
+.callout.c2{right:clamp(24px,4vw,56px);bottom:18%}.callout.c2::before{left:-52px;top:10px}
+@media(max-width:900px){.tech .stage{grid-template-columns:1fr;min-height:0}.callout{position:static;width:auto;margin-top:8px}.callout::before{display:none}.tech .prod{order:-1;padding-right:0;place-items:center}.tech .prod img{width:60%}}
+
+/* ---- 5 science / worldview (Seed: "You are more than human") ---- */
+.sci{background:var(--cream);padding-block:80px}
+.sci .brand{font-family:var(--display);font-size:15px;letter-spacing:.02em;color:var(--ink);margin-bottom:34px;font-weight:500}
+.sci .brand span{color:var(--green);letter-spacing:.06em}
+.sci .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(24px,5vw,72px);align-items:center}
+.sci h2{font-size:clamp(34px,4.4vw,56px);line-height:1.02}
+.sci p{font-size:16.5px;color:var(--ink-2);max-width:46ch;margin-top:18px}
+.sci .awards{margin-top:22px;display:grid;gap:0;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden;max-width:560px}
+.sci .awards>div{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center;padding:11px 14px;border-top:1px solid var(--line)}
+.sci .awards>div:first-child{border-top:0}
+.sci .awards i{font-style:normal;font-family:var(--display);font-weight:600;color:#6a4f0e;background:var(--gold-soft);border:1px solid var(--gold);border-radius:999px;text-align:center;padding:4px 0;font-size:13px}
+.sci .awards b{display:block;font-family:var(--display);font-weight:500;font-size:14.5px;line-height:1.2}
+.sci .awards small{color:var(--ink3);font-size:12px}.sci .awards a{color:var(--green);font-weight:600;text-decoration:none}
+.sci .award{display:flex;gap:14px;align-items:center;margin-top:24px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:#fff;max-width:520px}
+.sci .award .seal{flex:none;width:48px;height:48px;border-radius:50%;border:1.5px solid var(--gold);background:var(--gold-soft);display:grid;place-items:center;font-family:var(--display);font-size:12px;font-weight:600;color:#6a4f0e}
+.sci .award div{font-size:13.5px;color:var(--ink-2)}
+.sci .award div b{display:block;color:var(--ink);font-family:var(--display);font-weight:500;font-size:15.5px}
+.sci .award a{color:var(--green);font-weight:600;text-decoration:none;font-size:13px}
+.sci .ctas{display:flex;gap:16px;align-items:center;margin-top:24px}
+.sci .quality{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px;max-width:560px}
+.sci .quality div{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:12px;color:var(--ink3)}
+.sci .quality b{display:block;font-family:var(--display);font-weight:600;font-size:16px;color:var(--ink);margin-bottom:2px}
+@media(max-width:700px){.sci .quality{grid-template-columns:1fr 1fr}}
+.sci .render{border-radius:var(--r);background:linear-gradient(160deg,#E3ECE3,#CFDCD0);aspect-ratio:1/1;max-height:560px;display:grid;place-items:center;position:relative;overflow:hidden}
+.sci .render svg{width:78%;height:auto}
+.sci .render .lbl{position:absolute;left:16px;bottom:14px;font-size:11.5px;color:var(--ink-3);background:rgba(255,255,255,.8);padding:5px 9px;border-radius:7px}
+.sci .crumb{margin-top:34px;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.sci .crumb span{color:var(--ink-3)}
+@media(max-width:900px){.sci .grid{grid-template-columns:1fr}}
+
+/* ---- 6 reviews carousel (Seed: "Over 1 million…") ---- */
+.revs{background:var(--cream);padding-block:40px 80px;text-align:center}
+.revs h2{font-size:clamp(30px,3.8vw,48px);line-height:1.05;max-width:22ch;margin-inline:auto}
+.revs .sub{color:var(--ink-2);margin-top:12px;font-size:15px}
+.revs .fn{color:var(--ink-3);font-size:12.5px;margin-top:6px}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px var(--gutter) 10px;margin-inline:calc(-1*var(--gutter));text-align:left}
+.rv{flex:0 0 min(420px,82vw);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px;display:grid;gap:14px;grid-template-rows:auto 1fr auto;min-height:250px}
+.rv .stars{color:var(--gold);letter-spacing:2px;font-size:14px}
+.rv blockquote{margin:0;font-family:var(--display);font-size:20px;line-height:1.3;font-weight:500}
+.rv .who{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:12px}
+.rv .who a{color:var(--green);font-weight:600;text-decoration:none}
+.rv.v{background:var(--green-deep);color:#fff;border:0;place-items:center;text-align:center;grid-template-rows:1fr}
+.rv.v .ph{color:#9DBFA8;font-size:13px;display:grid;gap:8px}.rv.v .ph b{color:#fff;font-family:var(--display);font-weight:500;font-size:16px}
+.rv.v .play{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4);display:grid;place-items:center;margin:0 auto}
+
+/* ---- 7 stories mosaic (Seed: UGC + press) ---- */
+.stories{background:var(--cream);padding-block:20px 90px}
+.stories h2{font-size:clamp(30px,3.8vw,48px);line-height:1.05;max-width:26ch;margin-bottom:34px}
+.press-strip{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin:-14px 0 22px;color:var(--ink3);font-size:12.5px}
+.press-strip b{font-family:var(--display);font-weight:600;font-size:16px;color:var(--ink-2);letter-spacing:-.01em}
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:14px}
+.tile{border-radius:var(--r);overflow:hidden;position:relative;background:var(--cream-2);border:1px solid var(--line);text-decoration:none;color:var(--ink);display:grid;padding:20px}
+.tile.tall{grid-row:span 2}.tile.wide{grid-column:span 2}
+.tile.press{background:#fff;align-content:center;text-align:center;gap:12px}
+.tile.press q{font-family:var(--display);font-size:17px;line-height:1.3;font-weight:500;display:block;quotes:"“" "”"}
+.tile.press .src{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.tile.press .src b{display:block;font-family:var(--display);font-size:22px;letter-spacing:0;text-transform:none;color:var(--ink);font-weight:600}
+.tile.photo{padding:0;background:linear-gradient(160deg,#E7EEE6,#D5E0D6);display:grid;place-items:center}
+.tile.photo img{width:70%;filter:drop-shadow(0 16px 20px rgba(15,31,23,.2))}
+.tile.dark{background:var(--green-deep);color:#fff;border:0;align-content:end;gap:6px}
+.tile.dark .k{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#9DBFA8}
+.tile.dark h3{font-size:22px;line-height:1.1;font-weight:500}
+.tile.slot{border-style:dashed;border-color:#C9CFC6;align-content:center;text-align:center;color:var(--ink-3);font-size:13px;gap:4px}
+.tile.slot b{font-family:var(--display);color:var(--ink);font-weight:500;font-size:15px}
+.tile .play{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center;font-size:12px}
+@media(max-width:900px){.mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}}
+
+/* ---- 8 bookend (Seed: two cards) ---- */
+.book{padding:0 var(--gutter) 40px}
+.book .wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0}
+.bk{border-radius:28px;min-height:500px;display:grid;place-items:center;text-align:center;padding:40px;position:relative;overflow:hidden;color:#fff}
+.bk .in{display:grid;gap:14px;justify-items:center;max-width:36ch;position:relative;z-index:2}
+.bk h2{font-size:clamp(28px,3vw,40px);line-height:1.05}
+.bk p{color:rgba(255,255,255,.8);font-size:15.5px}
+.bk.a{background:linear-gradient(180deg,#5B6E5E,#2B3F31);border:1.5px dashed rgba(255,255,255,.35)}
+.bk.a .side{position:absolute;left:18px;top:50%;transform:rotate(-90deg) translateX(-50%);transform-origin:left top;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);white-space:nowrap}
+.bk.a .ph{position:absolute;top:16px;right:16px;font-size:11.5px;color:rgba(255,255,255,.75);background:rgba(0,0,0,.25);padding:5px 9px;border-radius:7px}
+.bk.b{background:radial-gradient(70% 60% at 50% 40%,#4F7A4E,#1C4B2B 70%)}
+.bk.b{place-items:center;align-content:center;gap:18px}
+.bk.b img{width:34%;max-height:240px;object-fit:contain;filter:drop-shadow(0 30px 30px rgba(0,0,0,.4))}
+@media(max-width:900px){.book .wrap{grid-template-columns:1fr}.bk{min-height:420px}}
+
+/* ---- 9 footer (Seed: dark, mission, newsletter, giant wordmark) ---- */
+footer{background:var(--green-deep);color:#B9C6BE;font-size:14px;overflow:hidden}
+footer .wrap{padding-block:64px 0;display:grid;gap:44px}
+footer .top{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px}
+footer .mission{font-family:var(--display);font-size:clamp(24px,2.6vw,34px);line-height:1.15;color:#fff;font-weight:500;max-width:22ch}
+footer .mission em{font-style:normal;color:var(--lime)}
+footer .nl{margin-top:26px;display:grid;gap:8px;max-width:420px}
+footer .nl p{color:#CFE0D3;font-size:14.5px}footer .nl small{color:#7F9388;font-size:12px}
+footer .nl form{display:flex;gap:8px;margin-top:6px}
+footer .nl input{flex:1;padding:13px 16px;border-radius:999px;border:1px solid #3F6A4F;background:#173E24;color:#fff;font:inherit;font-size:14px;min-width:0}
+footer .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;min-width:0}
+footer h4{color:#fff;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px;font-weight:600}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+footer .base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid #23362C;padding-top:20px;color:#7F9388;font-size:12.5px}
+footer .word{font-family:var(--display);font-weight:700;letter-spacing:-.04em;font-size:clamp(64px,13vw,190px);line-height:.8;color:#fff;opacity:.16;white-space:nowrap;margin-top:6px;transform:translateY(12%)}
+@media(max-width:900px){footer .top{grid-template-columns:1fr}footer .cols{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+
+<button class="notes-btn" id="notesBtn" type="button" aria-pressed="false"><i></i> Notas para o designer</button>
+
+<!-- NAV (Seed: pílula flutuante) -->
+<div class="navwrap"><div class="nav">
+  <div class="pill"><img src="img/logo.png" alt="Natura Vitalis"><a class="m" href="#produtos">Produtos</a><a class="m" href="#tecnologia">Tecnologia</a><a class="m" href="#historias">Histórias</a></div>
+  <div class="pill right"><a class="m" href="#">Entrar</a><a class="btn btn-ink" href="#lifescan">Life Scan</a></div>
+</div></div>
+
+<!-- 1 HERO -->
+<section class="hero" id="top">
+  <span class="tag">1 · HERO — Seed: “A life-changing health routine…”</span>
+  <div class="wrap">
+    <div>
+      <div class="note"><b>Regras de copy (John, 17/09): (1) falar do que a pessoa precisa, não do que a Natura tem; (2) "Essen" não diz nada ao leitor — usar "Alemanha" como selo de origem ("da Alemanha para a Europa"); Essen só no endereço legal do rodapé. Nada de "temos cinco protocolos" — a pessoa só precisa saber que o Scan mostra a lacuna dela e entrega a solução.</b><br><b>Seed: promessa ao leitor + 4 produtos enfileirados em superfície escura + Quiz (primário) e Shop (link).</b>Natura: mesma composição. A promessa é a tese da empresa (absorção), sustentada pela NVCC® — que a própria Natura define como "know-how desenvolvido ao longo de décadas para aumentar a biodisponibilidade natural dos nutrientes". Os 4 produtos do lineup são os 4 com tecnologia NVCC/MM documentada.
+        <ul><li>CTA primário: “Fazer o Life Scan” → questionário (como a Seed faz com o Quiz). Secundário: “Ver produtos →” → /shop.</li><li>Mobile: texto, botões, depois o lineup em faixa horizontal.</li><li>Falta: lineup fotografado em conjunto (hoje são packshots recortados, escala aproximada).</li></ul></div>
+      <p class="eyebrow" style="color:#CFE0D3;margin-bottom:18px">Natura Vitalis · desenvolvido na Alemanha · desde 1999</p>
+      <h1>Não é o que você toma. É o que o seu corpo absorve.</h1>
+      <p class="lead">Muito do que você toma passa pelo corpo sem ser aproveitado. Desde 1999, a Natura Vitalis desenvolve na Alemanha formas de mudar isso — para a vitamina D, a vitamina C, o Q10, o hialurônico. A tecnologia se chama <strong style="color:#fff">NVCC®</strong>. Nesta página você vê o que ela muda para você.</p>
+      <div class="ctas"><a class="btn btn-lime" href="#lifescan">Descobrir o que eu preciso</a><a class="btn btn-link" href="#produtos">Ver produtos →</a></div>
+    </div>
+    <div class="lineup">
+      <img class="p1" src="img/nanoboost.png" alt="NanoBoost D3 & K2">
+      <img class="p2" src="img/betterc.png" alt="Better C">
+      <img class="p3" src="img/multi.png" alt="Premium Multi Formula">
+      <img class="p4" src="img/hyaluron-mm.png" alt="Hyaluron MM Complex">
+    </div>
+  </div>
+</section>
+
+<!-- 2 PRODUCT CAROUSEL -->
+<section class="prods" id="produtos">
+  <span class="tag">2 · PRODUTOS — Seed: “Whole body health starts in the gut” + 4 cards</span>
+  <div class="wrap">
+    <div class="note"><b>Seed: continua no verde, título-tese + frase + “Shop All”, 4 cards com selo, código, nome, produto 3D, Shop Now, preço. Caffeine Army: pílulas de escolha antes dos cards.</b>Natura: 7 cards, decididos pelo cruzamento das três camadas (bundle/protocolo · tecnologia · ênfase atual) — <a href="https://claude.ai/artifact/E5gyn9ithR4eZSukND1gHX">análise completa</a>. Entram: os 4 da hero + ProBioSkin (cosmético que a Natura mesma põe em bundle e em todos os kits) + Collagen (bestseller, morango em estoque) + Omega 3 (Mind + artigos na home atual). CBD fora por decisão do John. <b>Critério de seleção</b> (analisado sobre os 14 produtos dos 5 protocolos): (1) está num protocolo → é o que o Scan vai indicar; (2) tem tecnologia documentada na página oficial (NVCC®/MM/hidrossolúvel); (3) cobre as categorias; (4) tem estoque e packshot.
+        <ul><li><b>Entram:</b> NanoBoost (Longevity · NVCC névoa) · Better C (Longevity · NVCC leito fluidizado) · Premium Multi Formula (Body 2 + Longevity · base de 2 protocolos) · Hyaluron MM Complex (Beauty · micromolecular) · Hyaluron-Gel MM (cosmético · mesma tecnologia MM na pele) · Omega 3 Marine (Mind).</li>
+        <li><b>Ficam de fora e por quê:</b> Collagen Lift-Drink (esgotado hoje na loja) · Coenzym Q10 (sem packshot no site; tecnologia hidrossolúvel citada na S4) · Body 1 inteiro (Shape &amp; Burn, Keto 28, Glucomannan — comunicação de emagrecimento restrita na UE) · Flexi-Bel, Sacra, Haut-Haare-Nägel, Xtreme Power (sem diferencial que a Home consiga mostrar) · Delphin T8 (sem foto do aparelho).</li>
+        <li>Preços = loja alemã hoje (naturavitalis.de); no NV System vêm por país.</li><li>CTA: card → produto; “Ver todos” → /shop; pílulas → categoria.</li></ul></div>
+    <div class="head">
+      <div><h2>Para cada coisa que falta, uma forma de chegar.</h2>
+        <div class="catrow"><a href="#">Suplementos alimentares</a><a href="#">Cosméticos</a><a href="#">Delphin T8</a><a href="#">Bundles</a></div></div>
+      <p>Vitamina D em névoa porque não se dissolve em água. Vitamina C revestida porque se perde na digestão. Hialurônico micro porque a molécula normal não entra. Escolha pelo que você precisa — ou deixe o Life Scan escolher por você.</p>
+      <a class="all" href="#">Ver todos os produtos</a>
+    </div>
+    <div class="cards">
+      <a class="card" href="#"><span class="badge">NVCC®</span><span class="code">Suplemento · Spray</span><h3>NanoBoost D3 &amp; K2</h3><div class="pic"><img src="img/nanoboost.png" alt="NanoBoost D3 & K2"></div><p style="color:#CFE0D3;font-size:13.5px;margin:0">Um jato sob a língua por dia. A vitamina D entra sem depender da sua digestão.</p><span class="btn btn-lime">Ver produto</span><span class="price">20 ml · 46,97 €</span></a>
+      <a class="card" href="#"><span class="badge">NVCC®</span><span class="code">Suplemento · Comprimidos</span><h3>Better C</h3><div class="pic"><img src="img/betterc.png" alt="Better C"></div><p style="color:#CFE0D3;font-size:13.5px;margin:0">1.000 mg de vitamina C que não se perdem no caminho: cada partícula revestida antes de virar comprimido.</p><span class="btn btn-lime">Ver produto</span><span class="price">60 un. · 46,75 €</span></a>
+      <a class="card" href="#"><span class="badge gold">Base de 2 protocolos</span><span class="code">Suplemento · Comprimidos</span><h3>Premium Multi Formula</h3><div class="pic"><img src="img/multi.png" alt="Premium Multi Formula"></div><p style="color:#CFE0D3;font-size:13.5px;margin:0">A sua base diária. Vitaminas e minerais nas formas que o corpo aproveita — com enzimas para ajudar a digerir.</p><span class="btn btn-lime">Ver produto</span><span class="price">60 un. · 59,68 €</span></a>
+      <a class="card" href="#"><span class="badge gold">Premiado · 2016</span><span class="code">Suplemento · Cápsulas</span><h3>Hyaluron MM Complex</h3><div class="pic"><img src="img/hyaluron-mm.png" alt="Hyaluron MM Complex"></div><p style="color:#CFE0D3;font-size:13.5px;margin:0">Hialurônico pequeno o bastante para chegar à pele por dentro. O primeiro prêmio internacional da Natura.</p><span class="btn btn-lime">Ver produto</span><span class="price">120 cáps. · 69,98 €</span></a>
+      <a class="card" href="#"><span class="badge line">NV Timeless</span><span class="code">Cosmético · Creme facial</span><h3>ProBioSkin ∑</h3><div class="pic"><img src="img/probioskin.png" alt="ProBioSkin"></div><p style="color:#CFE0D3;font-size:13.5px;margin:0">Um creme que trabalha nas camadas de baixo da pele, não só na superfície. Lipossomal, patenteado.</p><span class="btn btn-lime">Ver produto</span><span class="price">50 ml · 89,88 €</span></a>
+      <a class="card" href="#"><span class="badge line">Bestseller</span><span class="code">Suplemento · Drink</span><h3>Collagen-Lift-Drink</h3><div class="pic"><img src="img/collagen.png" alt="Collagen-Lift-Drink"></div><p style="color:#CFE0D3;font-size:13.5px;margin:0">Colágeno para beber, com L-lisina e biotina. Mais de 1 milhão de pessoas já experimentaram.</p><span class="btn btn-lime">Ver produto</span><span class="price">300 g · 49,98 €</span></a>
+      <a class="card" href="#"><span class="badge line">Protocolo Mind</span><span class="code">Suplemento · Cápsulas</span><h3>Omega 3 Marine</h3><div class="pic"><img src="img/omega.png" alt="Omega 3 Marine"></div><p style="color:#CFE0D3;font-size:13.5px;margin:0">EPA e DHA do mar, duas cápsulas por dia. Para o que a sua alimentação não cobre.</p><span class="btn btn-lime">Ver produto</span><span class="price">60 cáps. · 39,95 €</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 3 HIGHLIGHT → LIFE SCAN -->
+<section class="hl" id="lifescan">
+  <span class="tag">3 · LIFE SCAN — Seed: “Bundle + Save” highlight</span>
+  <div class="wrap">
+    <div>
+      <div class="note"><b>Seed: bloco claro com chip de oferta, título, frase, CTA e, à direita, o bundle + 3 miniaturas. AG1: "what's included" itemizado. Puríssima: botão abre a tarefa direto.</b>Natura: este é o slot do Life Scan — a Seed vende o bundle aqui; a Natura oferece o protocolo por meio do Scan. A lista "o que vem no protocolo" é o dispositivo do AG1. Única seção de Scan da página.
+        <ul><li>CTA: “Iniciar Life Scan” → primeira pergunta, sem login, sem página intermediária; preserva idioma e indicação.</li><li>Miniaturas: pergunta real · tela de resultado · protocolo no app (as três são placeholders até vir a interface).</li><li>Falta: tela real do questionário; foto do bundle de um protocolo.</li></ul></div>
+      <span class="badge">Life Scan · grátis · sem cadastro</span>
+      <h2>Você não precisa saber o que tomar. Só precisa responder.</h2>
+      <p class="lead">O Life Scan lê a sua rotina, o seu corpo e os seus objetivos, mostra onde está a lacuna e monta um protocolo de 90 dias para fechá-la — com os produtos certos, na ordem certa. Nenhuma conta, nenhum e-mail antes da primeira pergunta.</p>
+      <ul><li>Resultado na hora</li><li>Um protocolo feito para o seu caso, não um catálogo</li><li>Leve o protocolo inteiro ou só o que quiser</li></ul>
+      <div class="ctas"><a class="btn btn-green" href="#">Começar o meu Life Scan</a><small>Abre a primeira pergunta.</small></div>
+    </div>
+    <div class="media">
+      <div class="big"><span class="lbl">Exemplo de protocolo montado</span><img class="i1" src="img/multi.png" alt="Premium Multi Formula"><img class="i2" src="img/nanoboost.png" alt="NanoBoost D3 & K2"><img class="i3" src="img/betterc.png" alt="Better C"></div>
+      <div class="incl"><b>O que você recebe</b>
+        <div><span>Premium Multi Formula</span><small>base diária · 60 un.</small></div>
+        <div><span>NanoBoost D3 &amp; K2</span><small>1 jato por dia · 20 ml</small></div>
+        <div><span>Better C</span><small>1.000 mg · 60 un.</small></div></div>
+      <div class="thumb"><div><div style="font-size:10px;letter-spacing:.08em;color:#9DBFA8">PERGUNTA 1</div><div class="q" style="margin-top:6px">Como está a sua energia ao longo do dia?</div></div><div class="o"><span>Estável</span><span class="s">Cai à tarde</span><span>Baixa desde cedo</span></div></div>
+      <div class="thumb t2"><div style="font-size:10px;letter-spacing:.08em;color:var(--ink-3)">RESULTADO</div><div class="ring"></div><div class="q" style="text-align:center">Onde está a sua lacuna — e o que fecha</div></div>
+      <div class="thumb t3"><div class="q">Tela do app com o protocolo</div><div style="font-size:11px">placeholder — usar interface real</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 TECHNOLOGY -->
+<section class="tech" id="tecnologia">
+  <span class="tag">4 · TECNOLOGIA — Seed: ViaCap® (vídeo macro + card + callouts)</span>
+  <div class="note" style="max-width:var(--maxw);margin:0 auto 16px"><b>Seed: vídeo macro em tela cheia, card translúcido com tese + número animado, callouts apontando partes da cápsula. Caffeine Army: "selecione um produto para ver os ingredientes".</b>Natura: NVCC® como plataforma, com o seletor da Caffeine trocando produto, número e callouts (4 aplicações documentadas no site: NanoBoost, Better C, Haut-Haare-Nägel, e o Q10 hidrossolúvel). Número da página oficial (1000×). Callouts = duas aplicações diferentes, para provar que é método, não produto. Fundo = vídeo macro do jato.
+    <ul><li>CTA: “Conhecer o NanoBoost D3+K2” → página do produto.</li><li>Mobile: produto em cima, texto embaixo, callouts viram lista.</li><li>Falta: vídeo macro real do jato (fundo). Enquanto não vier: névoa em canvas, marcada como ilustração. Copy passa por revisão regulatória.</li></ul></div>
+  <div class="stage">
+    <div class="blur"></div><canvas id="mist"></canvas>
+    <div class="txt">
+      <span class="eyebrow">NVCC® · Natura Vitalis Cell Carrier</span>
+      <h2>Grande parte do que você toma passa pelo corpo sem ser usada. A NVCC® existe para mudar isso.</h2>
+      <p style="color:#E7EFE8;font-size:16px;max-width:46ch">Não é um truque só. Para cada ativo, um caminho: névoa para a vitamina D, revestimento para a vitamina C, água para o Q10. Toque em um produto e veja o que muda para você.</p>
+      <div class="tabs" role="tablist"><button class="on" data-t="0" role="tab">NanoBoost D3+K2</button><button data-t="1" role="tab">Better C</button><button data-t="2" role="tab">Coenzym Q10</button></div>
+      <div class="stat"><div class="l"><span class="badge" id="stBadge">NanoBoost</span><span id="stLabel">Partículas menores que um fio de cabelo</span></div><b id="stNum">1000×</b></div>
+      <p class="fn">Descrições conforme as páginas oficiais dos produtos. Ilustração esquemática. Copy sujeita a revisão regulatória (claims UE).</p>
+      <a class="btn btn-white" href="#produtos" style="justify-self:start">Ver o que tem NVCC®</a>
+    </div>
+    <div class="prod"><img id="techImg" src="img/nanoboost.png" alt="NanoBoost D3 & K2 em detalhe"><div id="techNoImg" class="noimg" hidden><b>Coenzym Q10</b>packshot a fornecer<br>(não existe no site atual)</div></div>
+    <div class="callout c1"><b id="c1t">Névoa</b><span id="c1b">O óleo de D3 e K2 vira nanoemulsão — uma névoa de partículas em escala nano, não uma gota.</span></div>
+    <div class="callout c2"><b id="c2t">Sublingual</b><span id="c2b">1 jato (0,12 ml · 800 UI) sob a língua entra pela mucosa da boca, sem esperar a digestão.</span></div>
+  </div>
+</section>
+
+<!-- 5 SCIENCE / WORLDVIEW -->
+<section class="sci" id="ciencia">
+  <span class="tag">5 · CIÊNCIA — Seed: “You are more than human”</span>
+  <div class="wrap">
+    <div class="note"><b>Seed: marca + colchetes, tese de visão de mundo, render translúcido, “Discover” → Science. Nuture: faixa "padrão de qualidade" com 4 fatos.</b>Natura: a tese é a das micelas; os 4 prêmios GHP entram como prova integrada, com categoria e ano exatos (fonte: Mediateca da Natura). <b>Os 3 prêmios de CBD (2019–2021) ficam fora por decisão do John</b> — não há CBD no catálogo. A faixa de 4 fatos é o dispositivo da Nuture.
+        <ul><li>CTA: “Conhecer a tecnologia” → /tecnologia. Link do prêmio → fonte oficial.</li><li>Falta: selos em alta resolução (os da home atual têm 120px).</li></ul></div>
+    <div class="brand">Natura Vitalis <span>【 Micelas 】</span></div>
+    <div class="grid">
+      <div>
+        <h2>Você é feito de água. Muito do que precisa se dissolve em gordura.</h2>
+        <p>Vitamina D, Q10, ômega-3 não se misturam com água — e o seu organismo é água. A micela envolve o ativo para ele atravessar esse ambiente e chegar onde é usado. É a tecnologia que rendeu à Natura o prêmio mais recente, o quarto internacional desde 2016.</p>
+        <div class="awards">
+          <div><i>2016</i><div><b>Best Natural Healthcare Supplier – Europe</b><small>Packaging &amp; Manufacturing Award · produto premiado: Hyaluron MM</small></div></div>
+          <div><i>2017</i><div><b>Best Nutritional Supplement Brand – West Europe</b><small>Biotechnology Award</small></div></div>
+          <div><i>2018</i><div><b>Best Nutritional Supplement &amp; Cosmetics Provider – Europe</b><small>Biotechnology Award</small></div></div>
+          <div><i>2022</i><div><b>Most Innovative Micelle Technology Manufacturer</b><small>Biotechnology Award · <a href="https://www.naturavitalis.de/Mediathek/Magazine/Innovation-2022.html">fonte</a></small></div></div>
+        </div>
+        <div class="ctas"><a class="btn btn-ink" href="#">Entender como isso chega em você ▸</a></div>
+        <div class="crumb"><span>Tecnologia</span> / Micelas e NVCC®</div>
+        <div class="quality"><div><b>Alemanha</b>desenvolvido lá desde 1999</div><div><b>4 prêmios GHP</b>2016 · 17 · 18 · 22</div><div><b>30 dias</b>devolução sem perguntas</div><div><b>0800</b>hotline com gente, seg–sex</div></div>
+      </div>
+      <div class="render" aria-label="Ilustração esquemática de uma micela">
+        <svg viewBox="0 0 400 400" role="img">
+          <defs><radialGradient id="core" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#9CC48F"/><stop offset="1" stop-color="#3E7A4A"/></radialGradient></defs>
+          <circle cx="200" cy="200" r="92" fill="url(#core)" opacity=".85"/>
+          <g fill="#1C4B2B" opacity=".9" id="heads"></g>
+          <g stroke="#2E6B41" stroke-width="2" opacity=".55" id="tails"></g>
+          <text x="200" y="206" text-anchor="middle" font-family="Schibsted Grotesk,sans-serif" font-size="13" fill="#fff" letter-spacing="1">ATIVO</text>
+        </svg>
+        <span class="lbl">Diagrama esquemático — não é imagem microscópica</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 REVIEWS -->
+<section class="revs" id="avaliacoes">
+  <span class="tag">6 · AVALIAÇÕES — Seed: “Over 1 million health transformations”</span>
+  <div class="wrap">
+    <div class="note" style="text-align:left"><b>Seed: número grande + carrossel de vídeos de membros.</b>Natura: número verificável (417 avaliações somadas nas páginas dos 14 produtos dos protocolos, 17/09). Alternativa maior: a embalagem do Collagen Lift-Drink diz “mais de 1 milhão de usuários” — usar só com validação da Natura. Textos = avaliações reais da loja, traduzidas. Vídeo só se existir.
+        <ul><li>CTA: card → produto avaliado.</li><li>Falta: liberação jurídica das avaliações; vídeos de clientes (slot).</li></ul></div>
+    <h2>Mais de 400 avaliações. Nenhuma escrita por nós.</h2>
+    <p class="sub">Publicadas por clientes na loja Natura Vitalis. Leia antes de decidir.</p>
+    <p class="fn">Contagem feita em 17/09/2026 nas páginas dos produtos desta página e dos protocolos (417 avaliações). Traduções livres do alemão.</p>
+    <div class="track">
+      <div class="rv v"><div class="ph"><div class="play">▶</div><b>Vídeo de cliente</b>slot — só com material autorizado</div></div>
+      <div class="rv"><div class="stars">★★★★★</div><blockquote>“Tão simples de usar, tão gostoso, tão valioso para o corpo. Um ou dois jatos sob a língua e pronto — até minhas netas pedem.”</blockquote><div class="who"><span>Cliente · loja Natura Vitalis</span><a href="#">NanoBoost D3+K2</a></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><blockquote>“Já usava o produto anterior, mas o spray D3/K2 é outra coisa comparado às gotas. Obrigado à equipe de desenvolvimento.”</blockquote><div class="who"><span>Cliente · loja Natura Vitalis</span><a href="#">NanoBoost D3+K2</a></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><blockquote>“Ótimo produto, muitos ingredientes combinados. Tomo junto com o Better C e outros — a gente se sente mais disposto.”</blockquote><div class="who"><span>Cliente · loja Natura Vitalis</span><a href="#">Premium Multi Formula</a></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><blockquote>“As cápsulas Hyaluron MM Complex são, para mim, um produto uau.”</blockquote><div class="who"><span>Cliente · loja Natura Vitalis</span><a href="#">Hyaluron MM Complex</a></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><blockquote>“Já tomo o Omega 3 da Natura Vitalis há muito tempo e me sinto bem com ele.”</blockquote><div class="who"><span>Cliente · loja Natura Vitalis</span><a href="#">Omega 3 Marine</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 STORIES MOSAIC -->
+<section class="stories" id="historias">
+  <span class="tag">7 · HISTÓRIAS — Seed: “Stories from scientists, innovators, and members”</span>
+  <div class="wrap">
+    <div class="note"><b>Seed: mosaico com vídeo, produto em uso, citação de imprensa (Fast Company), posts. Puríssima: faixa "na mídia".</b>Natura: faixa de imprensa com os 6 veículos que a home atual já exibe + Forbes; citação da entrevista Forbes (2020, Mediateca); 2 artigos reais da home atual (Q10 e Burn your Cellulite — os produtos que a Natura mais empurra hoje via conteúdo). Posts de clientes ficam como slot. Falta: logos vetoriais dos veículos.
+        <ul><li>CTA: cada tile → artigo, produto ou post.</li><li>Falta: fotos de produto em uso; frase exata a citar da entrevista; contas sociais.</li></ul></div>
+    <h2>Antes de confiar, leia quem já olhou de perto.</h2>
+    <div class="press-strip"><span>Natura Vitalis na imprensa</span><b>finanztrends</b><b>top magazin</b><b>petra</b><b>Brigitte</b><b>wallstreet:online</b><b>GRAZIA</b><b>Forbes</b></div>
+    <div class="mosaic">
+      <a class="tile photo tall" href="#"><img src="img/betterc.png" alt="Better C"><span class="play">▶</span></a>
+      <a class="tile press" href="https://www.naturavitalis.de/Mediathek/Magazine/Frank-Felte-im-Interview-mit-dem-renommierten-Wirtschaftsmagazin-FORBES.html"><q>Uma alga marcou o início. Vinte anos depois, uma empresa de faturamento de oito dígitos que ainda desenvolve o que vende.</q><span class="src">Entrevista · 2020 <b>Forbes</b></span></a>
+      <a class="tile dark" href="#"><span class="k">Blog · Coração</span><h3>Coenzima Q10: uma aliada promissora para um coração saudável</h3></a>
+      <a class="tile photo" href="#"><img src="img/timeless-set.png" alt="NV Timeless" style="width:80%"></a>
+      <div class="tile slot"><b>Post de cliente</b>entra só com autorização</div>
+      <a class="tile dark" href="#"><span class="k">Blog · Cosméticos</span><h3>Falso ou real? Burn your Cellulite® deixa todos sem palavras</h3></a>
+      <a class="tile photo" href="#"><img src="img/nanoboost.png" alt="NanoBoost" style="width:52%"><span class="play">▶</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 8 BOOKEND -->
+<section class="book" id="sobre">
+  <span class="tag">8 · FECHO — Seed: Seed Labs + “Change your gut health for good”</span>
+  <div class="wrap">
+    <div class="bk a"><span class="side">● Alemanha · desde 1999</span><span class="ph">foto do Frank (a mesma da home atual) a fornecer</span>
+      <div class="in"><h2>“O mais importante não está nestas páginas. Está na frente delas: você.”</h2><p>Frank Felte, fundador. Da Alemanha para a Europa desde 1999 — desenvolvendo, não revendendo.</p><a class="btn btn-white" href="#">Sobre a Natura Vitalis</a></div></div>
+    <div class="bk b"><img src="img/nanoboost.png" alt="">
+      <div class="in"><h2>Comece pequeno.</h2><p>Um produto, enviado da Alemanha em 1–3 dias úteis. 30 dias para devolver se não for para você, sem perguntas.</p><a class="btn btn-lime" href="#produtos">Escolher um produto</a></div></div>
+  </div>
+  <div class="note" style="max-width:var(--maxw);margin:16px auto 0"><b>Seed: dois cards — missão (Labs) e empurrão final de compra. Puríssima: o fundador fala.</b>Natura: esquerda = a frase que o Frank já usa na home atual ("Das Wichtigste steht nicht auf diesen Seiten, sondern sitzt davor. Sie!") — continuidade de voz, com a foto dele; direita = compra, não outro banner de Scan. Blog não tem seção própria: a Seed não tem, e o mosaico já o carrega.</div>
+</section>
+
+<!-- 9 FOOTER -->
+<footer>
+  <span class="tag" style="position:absolute">9 · RODAPÉ — Seed: missão + newsletter + wordmark gigante</span>
+  <div class="wrap">
+    <div class="top">
+      <div><p class="mission">Da Alemanha, desde 1999, com uma obsessão: <em>que o que você toma chegue</em> onde precisa.</p>
+        <div class="nl"><p>Saiba o que está tomando. Uma vez por mês, na sua caixa de entrada.</p><small>Sem promoção diária. Ao inscrever-se você aceita receber e-mails da Natura Vitalis.</small>
+          <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Inscrito ✓'"><input id="nl-email" type="email" placeholder="seu@email.com" aria-label="E-mail"><button class="btn btn-lime" type="submit">Inscrever</button></form></div></div>
+      <div class="cols">
+        <div><h4>Produtos</h4><ul><li>Suplementos alimentares</li><li>Cosméticos</li><li>Delphin T8</li><li>Bundles</li></ul></div>
+        <div><h4>Empresa</h4><ul><li>Sobre</li><li>Tecnologia</li><li>Blog</li><li>Contato</li><li>Login de parceiro</li></ul></div>
+        <div><h4>Ajuda &amp; Legal</h4><ul><li>Perguntas frequentes</li><li>Entrega · Pagamento</li><li>Devoluções</li><li>Impressum · Datenschutz · AGB</li></ul></div>
+      </div>
+    </div>
+    <div class="base"><span>© Natura Vitalis GmbH · Adlerstraße 29, 45307 Essen · HRB 14708</span><span>PT · DE · EN · FR · IT · ES</span></div>
+    <div class="word" aria-hidden="true">NATURA VITALIS</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('notesBtn');
+  b.addEventListener('click',function(){var on=document.body.classList.toggle('notes');b.setAttribute('aria-pressed',on);});
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // micelle diagram: heads around the core, tails pointing in
+  var heads=document.getElementById('heads'),tails=document.getElementById('tails'),ns='http://www.w3.org/2000/svg';
+  for(var i=0;i<34;i++){var a=i/34*Math.PI*2,R=132,x=200+Math.cos(a)*R,y=200+Math.sin(a)*R;
+    var c=document.createElementNS(ns,'circle');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',9);heads.appendChild(c);
+    var l=document.createElementNS(ns,'line');l.setAttribute('x1',x);l.setAttribute('y1',y);l.setAttribute('x2',200+Math.cos(a)*96);l.setAttribute('y2',200+Math.sin(a)*96);tails.appendChild(l);}
+
+  // mist canvas in tech stage
+  var canvas=document.getElementById('mist');
+  if(canvas&&!reduce){var c=canvas.getContext('2d'),P=[],W,H,dpr=Math.min(2,window.devicePixelRatio||1);
+    function rs(){W=canvas.clientWidth;H=canvas.clientHeight;canvas.width=W*dpr;canvas.height=H*dpr;c.setTransform(dpr,0,0,dpr,0,0);}
+    rs();window.addEventListener('resize',rs);
+    function spawn(){var a=-2.35+(Math.random()-.5)*.8,s=.4+Math.random()*1.1;P.push({x:W*.66,y:H*.30,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:0,L:110+Math.random()*140,r:1.2+Math.random()*2.2});}
+    (function tick(){c.clearRect(0,0,W,H);for(var i=0;i<4;i++)if(P.length<260)spawn();
+      for(var i=P.length-1;i>=0;i--){var p=P[i];p.l++;p.x+=p.vx;p.y+=p.vy;p.vy-=0.003;p.vx*=.996;var t=p.l/p.L,al=(t<.15?t/.15:1-(t-.15)/.85)*.5;
+        c.beginPath();c.arc(p.x,p.y,p.r*(1+t*1.4),0,6.283);c.fillStyle='rgba(215,236,200,'+al+')';c.fill();if(p.l>p.L)P.splice(i,1);}
+      requestAnimationFrame(tick);})();}
+
+  // NVCC tabs (Caffeine Army: product selector)
+  var T=[
+    {b:'NanoBoost',l:'Partículas menores que um fio de cabelo',n:'1000×',img:'img/nanoboost.png',c1:['Névoa','O óleo de D3 e K2 vira nanoemulsão — uma névoa de partículas em escala nano, não uma gota.'],c2:['Sublingual','1 jato (0,12 ml · 800 UI) sob a língua entra pela mucosa da boca, sem esperar a digestão.']},
+    {b:'Better C',l:'Cada partícula de vitamina C revestida',n:'1 a 1',img:'img/betterc.png',c1:['Leito fluidizado','As partículas flutuam num fluxo de ar dentro de um tanque fechado — acessíveis por todos os lados, como astronautas em gravidade zero.'],c2:['Revestimento','Bioflavonoides são aplicados por bico em cada partícula. Só depois vira um comprimido de 1.000 mg.']},
+    {b:'Coenzym Q10',l:'Q10 tornado solúvel em água',n:'100 mg',img:null,c1:['O problema','Q10 é lipossolúvel. Num organismo feito de água, boa parte não é aproveitada.'],c2:['A solução','Q10 quebrado em micropartículas 100% hidrossolúveis. Uma cápsula por dia.']}];
+  var tabs=document.querySelectorAll('.tech .tabs button');
+  tabs.forEach(function(bt){bt.addEventListener('click',function(){var t=T[+bt.dataset.t];tabs.forEach(function(x){x.classList.toggle('on',x===bt)});
+    document.getElementById('stBadge').textContent=t.b;document.getElementById('stLabel').textContent=t.l;document.getElementById('stNum').textContent=t.n;
+    document.getElementById('c1t').textContent=t.c1[0];document.getElementById('c1b').textContent=t.c1[1];document.getElementById('c2t').textContent=t.c2[0];document.getElementById('c2b').textContent=t.c2[1];
+    var im=document.getElementById('techImg'),no=document.getElementById('techNoImg');if(t.img){im.src=t.img;im.hidden=false;no.hidden=true}else{im.hidden=true;no.hidden=false}});});
+
+  // animated counter (Seed: "17x")
+  var el=document.getElementById('stNum');
+  if(el&&'IntersectionObserver' in window&&!reduce){var done=false;new IntersectionObserver(function(es){if(es[0].isIntersecting&&!done){done=true;var t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/1400);if(el.textContent.indexOf('×')>0)el.textContent=Math.round(1000*(1-Math.pow(1-k,3)))+'×';if(k<1)requestAnimationFrame(f);})(t0);}},{threshold:.4}).observe(el);}
+})();
+</script>
+</body></html>
